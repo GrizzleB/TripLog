@@ -1,0 +1,26 @@
+﻿@model TripViewModel
+
+@{
+    ViewBag.Title = "Add Trip - Page 2";
+    ViewBag.SubHeader = "Add Info for [trip accommodation value here]";
+}
+
+<form asp-action="Add">
+    <input asp-for="PageNumber" type="hidden" />
+
+    <div class="form-group">
+        <label asp-for="Trip.AccommodationPhone">Phone</label>
+        <input asp-for="Trip.AccommodationPhone" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Trip.AccommodationEmail">Email</label>
+        <input asp-for="Trip.AccommodationEmail" class="form-control" />
+    </div>
+
+    <div>
+        <button type="submit" class="btn btn-dark">Next</button>
+        <a asp-action="Cancel" class="btn btn-outline-dark">Cancel</a>
+    </div>
+        
+</form>

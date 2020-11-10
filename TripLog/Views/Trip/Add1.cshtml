@@ -1,5 +1,7 @@
 ﻿<!--1. Add a model directive to your new TripViewModel class-->
 
+@model TripViewModel
+
 @{
     ViewBag.Title = "Add Trip - Page 1";
     ViewBag.SubHeader = "Add Trip Destination and Dates";
@@ -9,30 +11,30 @@
 
 <form asp-action="Add">
     <!--2. This input should reference the TripViewModel PageNumber (hint: use asp-for)-->
-    <input type="hidden" />
+    <input asp-for="PageNumber" type="hidden" />
 
     <div class="form-group">
         <!--3. This input input and label should reference the TripViewModel Trip object's Destination property-->
-        <label>Destination</label>
-        <input class="form-control" />
+        <label asp-for="Trip.Destination">Destination</label>
+        <input asp-for="Trip.Destination" class="form-control" />
     </div>
 
     <div class="form-group">
         <!--4. This input input and label should reference the TripViewModel Trip object's Accommodation property-->
-        <label>Accommodations</label>
-        <input class="form-control" />
+        <label asp-for="Trip.Accommodation">Accommodations</label>
+        <input asp-for="Trip.Accommodation" class="form-control" />
     </div>
 
     <div class="form-group">
         <!--5. This input input and label should reference the TripViewModel Trip object's StartDate property-->
-        <label>Start Date</label>
-        <input type="date" class="form-control" />
+        <label asp-for="Trip.StartDate">Start Date</label>
+        <input asp-for="Trip.StartDate" type="date" class="form-control" />
     </div>
 
     <div class="form-group">
         <!--6. This input input and label should reference the TripViewModel Trip object's EndDate property-->
-        <label>End Date</label>
-        <input type="date" class="form-control" />
+        <label asp-for="Trip.EndDate">End Date</label>
+        <input asp-for="Trip.EndDate" type="date" class="form-control" />
     </div>
     <div>
         <button type="submit" class="btn btn-dark">Next</button>
