@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Add Trip - Page 2";
-    ViewBag.SubHeader = "Add Info for [trip accommodation value here]";
+    ViewBag.SubHeader = $"Add Info for {Model.Trip.Accommodation}";
 }
 
 <form asp-action="Add">

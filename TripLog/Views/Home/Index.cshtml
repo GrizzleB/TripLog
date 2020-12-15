@@ -37,6 +37,41 @@
     The fifth cell should contain ThingToDo1, ThingToDo2, and ThingToDo3, each in
     its own <div> tag within the cell, but only if each is populated.
     -->
-
+        @foreach (var Trip in Model)
+        {
+        <tr>
+            <td>@Trip.Destination</td>
+            <td>@Trip.StartDate.ToString()</td>
+            <td>@Trip.EndDate.ToString()</td>
+            <td>
+                @if (Trip.Accommodation != null)
+                {
+                    <div>@Trip.Accommodation</div>
+                }
+                @if (Trip.AccommodationEmail != null)
+                {
+                    <div>@Trip.AccommodationEmail</div>
+                }
+                @if (Trip.AccommodationPhone != null)
+                {
+                    <div>@Trip.AccommodationPhone</div>
+                }
+            </td>
+            <td>
+                @if (Trip.ThingToDo1 != null)
+                {
+                    <div>@Trip.ThingToDo1</div>
+                }
+                @if (Trip.ThingToDo2 != null)
+                {
+                    <div>@Trip.ThingToDo2</div>
+                }
+                @if (Trip.ThingToDo3 != null)
+                {
+                    <div>@Trip.ThingToDo3</div>
+                }
+            </td>
+        </tr>
+        }
     </tbody>
 </table>
